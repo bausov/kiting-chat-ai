@@ -3,10 +3,10 @@ package com.github.bausov.kitingchatai.domain.service
 import com.github.bausov.kitingchatai.domain.core.KLogger
 import com.github.bausov.kitingchatai.domain.core.LoadedDocument
 import com.github.bausov.kitingchatai.infra.postgres.DocumentRepository
+import jakarta.annotation.PostConstruct
 import org.springframework.ai.reader.TextReader
 import org.springframework.ai.transformer.splitter.TokenTextSplitter
 import org.springframework.ai.vectorstore.VectorStore
-import org.springframework.boot.CommandLineRunner
 import org.springframework.core.io.Resource
 import org.springframework.core.io.support.ResourcePatternResolver
 import org.springframework.stereotype.Service
@@ -17,13 +17,14 @@ class DocumentLoaderService(
     private val resourcePatternResolver: ResourcePatternResolver,
     private val documentRepository: DocumentRepository,
     private val vectorStore: VectorStore,
-) : CommandLineRunner {
+) {
 
     private companion object {
         private val logger by KLogger()
     }
 
-    override fun run(vararg args: String?) {
+    @PostConstruct
+    fun loadDocuments() {
         logger.info("Starting document loading...")
 
         resourcePatternResolver.getResources("classpath:/knowledgebase/**/*.txt")
