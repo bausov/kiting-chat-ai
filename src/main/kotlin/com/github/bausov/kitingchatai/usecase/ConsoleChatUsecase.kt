@@ -24,9 +24,17 @@ class ConsoleChatUsecase(
                 break
             }
 
-            val answer = chatClient.prompt().user(input).call().content()
+            print("A: ")
 
-            println("A: $answer")
+            chatClient
+                .prompt(input)
+                .stream()
+                .chatResponse()
+                .doOnNext { response ->
+                    print(response.result.output.text)
+                }
+                .doOnComplete { println() }
+                .blockLast()
         }
     }
 }
