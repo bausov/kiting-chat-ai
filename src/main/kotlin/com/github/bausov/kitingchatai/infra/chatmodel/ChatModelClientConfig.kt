@@ -1,17 +1,16 @@
 package com.github.bausov.kitingchatai.infra.chatmodel
 
 import org.springframework.ai.chat.client.ChatClient
-import org.springframework.ai.chat.model.ChatModel
+import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor
+import org.springframework.ai.chat.memory.ChatMemory
 import org.springframework.ai.ollama.api.OllamaChatOptions
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
 @Configuration
-class ChatModelClientConfig {
-
-    @Autowired
-    private lateinit var chatModel: ChatModel
+class ChatModelClientConfig(
+    private val chatMemory: ChatMemory,
+) {
 
     @Bean
     fun chatClient(builder: ChatClient.Builder): ChatClient {
@@ -23,6 +22,9 @@ class ChatModelClientConfig {
                     .topK(20)
                     .repeatPenalty(1.1)
                     .build()
+            )
+            .defaultAdvisors(
+                MessageChatMemoryAdvisor.builder(chatMemory).order(0).build()
             )
             .build()
     }
