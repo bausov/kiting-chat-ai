@@ -1,6 +1,8 @@
 package com.github.bausov.kitingchatai.usecase
 
 import org.springframework.ai.chat.client.ChatClient
+import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor
+import org.springframework.ai.chat.memory.ChatMemory
 import org.springframework.boot.CommandLineRunner
 import org.springframework.stereotype.Component
 import java.io.BufferedReader
@@ -9,7 +11,9 @@ import java.io.InputStreamReader
 @Component
 class ConsoleChatUsecase(
     private val chatClient: ChatClient,
+    private val chatMemory: ChatMemory,
 ) : CommandLineRunner {
+    private val chatId = "console-chat"
     private val reader = BufferedReader(InputStreamReader(System.`in`))
 
     override fun run(vararg args: String?) {
@@ -28,12 +32,14 @@ class ConsoleChatUsecase(
 
             chatClient
                 .prompt(input)
+                .advisors(
+                    MessageChatMemoryAdvisor.builder(chatMemory).conversationId(chatId).order(0).build()
+                )
                 .stream()
                 .chatResponse()
                 .doOnNext { response ->
                     print(response.result.output.text)
                 }
-                .doOnComplete { println() }
                 .blockLast()
         }
     }
