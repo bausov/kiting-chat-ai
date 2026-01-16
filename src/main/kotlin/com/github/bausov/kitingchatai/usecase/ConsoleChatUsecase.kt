@@ -6,13 +6,12 @@ import org.springframework.boot.CommandLineRunner
 import org.springframework.stereotype.Component
 import java.io.BufferedReader
 import java.io.InputStreamReader
-import java.util.*
 
 @Component
 class ConsoleChatUsecase(
     private val chatClient: ChatClient,
 ) : CommandLineRunner {
-    private val chatId = "chat-id-${UUID.randomUUID()}"
+    private val chatId = "console-chat-id"
     private val reader = BufferedReader(InputStreamReader(System.`in`))
 
     override fun run(vararg args: String?) {
