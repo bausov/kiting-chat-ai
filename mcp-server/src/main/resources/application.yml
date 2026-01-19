@@ -1,4 +1,14 @@
 spring:
   application.name: "kiting-chat-ai-mcp-server"
+  ai:
+    mcp:
+      server:
+        name: "mcp-server"
+        version: 1.0.0
+        annotation-scanner.enabled: true
+        protocol: streamable
+        type: sync
+        streamable-http:
+          mcp-endpoint: "/mcp"
 server:
   port: 8081

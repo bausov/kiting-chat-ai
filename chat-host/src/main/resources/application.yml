@@ -10,9 +10,20 @@ spring:
     locations: classpath:db/migration
     baseline-on-migrate: true
     validate-on-migrate: true
-  ai.ollama:
-    base-url: http://localhost:11431
-    chat.model: gemma3:4b-it-q4_K_M
+  ai:
+    ollama:
+      base-url: http://localhost:11431
+      chat.model: PetrosStav/gemma3-tools:4b
+    mcp:
+      client:
+        name: "mcp-client"
+        version: 1.0.0
+        type: sync
+        streamable-http:
+          connections:
+            mcp-server:
+              url: http://localhost:8081/mcp
+              endpoint: /mcp
 
 chat:
   memory:
