@@ -1,4 +1,4 @@
-package com.github.bausov.kitingchatai.host
+package com.github.bausov.kitingchatai.mcp.server
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
