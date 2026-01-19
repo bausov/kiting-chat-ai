@@ -1,4 +1,4 @@
-package com.github.bausov.kitingchatai.usecase
+package com.github.bausov.kitingchatai.host.usecase
 
 import org.springframework.ai.chat.client.ChatClient
 import org.springframework.ai.chat.memory.ChatMemory.CONVERSATION_ID

@@ -1,4 +1,4 @@
-package com.github.bausov.kitingchatai.infra.chatmodel
+package com.github.bausov.kitingchatai.host.infra.chatmodel
 
 import org.springframework.ai.chat.client.ChatClient
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor

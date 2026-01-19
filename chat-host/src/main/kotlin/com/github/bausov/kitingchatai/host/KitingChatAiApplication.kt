@@ -1,4 +1,4 @@
-package com.github.bausov.kitingchatai
+package com.github.bausov.kitingchatai.host
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

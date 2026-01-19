@@ -1,8 +1,7 @@
-package com.github.bausov.kitingchatai.domain.service
+package com.github.bausov.kitingchatai.host.domain.service
 
-import com.github.bausov.kitingchatai.domain.core.KLogger
-import com.github.bausov.kitingchatai.domain.core.LoadedDocument
-import com.github.bausov.kitingchatai.infra.postgres.DocumentRepository
+import com.github.bausov.kitingchatai.host.domain.core.LoadedDocument
+import com.github.bausov.kitingchatai.host.infra.postgres.DocumentRepository
 import jakarta.annotation.PostConstruct
 import org.springframework.ai.reader.TextReader
 import org.springframework.ai.transformer.splitter.TokenTextSplitter
@@ -20,7 +19,7 @@ class DocumentLoaderService(
 ) {
 
     private companion object {
-        private val logger by KLogger()
+        private val logger by com.github.bausov.kitingchatai.host.domain.core.KLogger()
     }
 
     @PostConstruct

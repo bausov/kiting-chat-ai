@@ -1,4 +1,4 @@
-package com.github.bausov.kitingchatai.infra.memory
+package com.github.bausov.kitingchatai.host.infra.memory
 
 import org.springframework.ai.chat.memory.ChatMemory
 import org.springframework.ai.chat.memory.ChatMemoryRepository

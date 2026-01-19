@@ -1,6 +1,6 @@
-package com.github.bausov.kitingchatai.infra.postgres
+package com.github.bausov.kitingchatai.host.infra.postgres
 
-import com.github.bausov.kitingchatai.domain.core.LoadedDocument
+import com.github.bausov.kitingchatai.host.domain.core.LoadedDocument
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface DocumentRepository : JpaRepository<LoadedDocument, Long> {

@@ -1,4 +1,4 @@
-package com.github.bausov.kitingchatai.domain.core
+package com.github.bausov.kitingchatai.host.domain.core
 
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory

@@ -1,4 +1,4 @@
-package com.github.bausov.kitingchatai.infra.postgres
+package com.github.bausov.kitingchatai.host.infra.postgres
 
 import org.springframework.ai.chat.memory.ChatMemoryRepository
 import org.springframework.ai.chat.memory.repository.jdbc.JdbcChatMemoryRepository
