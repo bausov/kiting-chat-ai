@@ -4,8 +4,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class KitingChatAiApplication
+class KitingChatAiHostApplication
 
 fun main(args: Array<String>) {
-    runApplication<KitingChatAiApplication>(*args)
+    runApplication<KitingChatAiHostApplication>(*args)
 }
