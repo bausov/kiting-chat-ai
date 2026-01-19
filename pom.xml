@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>chat-host</module>
+        <module>mcp-server</module>
     </modules>
 
     <properties>
