@@ -19,6 +19,7 @@
         <kotlin.version>1.9.25</kotlin.version>
         <spring-ai.version>1.1.2</spring-ai.version>
         <mcp.sdk.version>0.17.1</mcp.sdk.version>
+        <open-meteo-api.version>0.7.1-beta.1</open-meteo-api.version>
     </properties>
 
     <dependencies>
@@ -42,6 +43,12 @@
         </dependency>
 
         <dependency>
+            <groupId>com.open-meteo</groupId>
+            <artifactId>open-meteo-api-kotlin</artifactId>
+            <version>${open-meteo-api.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
@@ -52,6 +59,7 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -63,6 +71,13 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
 
     <build>
         <sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
