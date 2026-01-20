@@ -1,0 +1,13 @@
+[
+  {
+    "name": "Сестрик",
+    "location": {
+      "latitude": 60.10,
+      "longitude": 29.94
+    },
+    "windDirections": {
+      "min": 218,
+      "max": 336
+    }
+  }
+]
