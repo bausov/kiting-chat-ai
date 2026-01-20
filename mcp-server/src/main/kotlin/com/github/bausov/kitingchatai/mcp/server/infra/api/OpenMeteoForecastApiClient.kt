@@ -28,6 +28,12 @@ class OpenMeteoForecastApiClient : OpenMeteoApiClient() {
         )
 
         val forecast = om.forecast {
+            daily = Forecast.Daily {
+                listOf(
+                    sunrise,
+                    sunset
+                )
+            }
             hourly = Forecast.Hourly {
                 listOf(
                     windspeed10m,
@@ -48,6 +54,8 @@ class OpenMeteoForecastApiClient : OpenMeteoApiClient() {
 
         return ForecastWeatherHourly(
             currentDateTime = LocalDateTime.now(zoneId),
+            sunrise = forecast.daily.getValue(Forecast.Daily.sunrise).toDomain(zoneId),
+            sunset = forecast.daily.getValue(Forecast.Daily.sunset).toDomain(zoneId),
             windSpeed = forecast.hourly.getValue(Forecast.Hourly.windspeed10m).toDomain(zoneId),
             windGusts = forecast.hourly.getValue(Forecast.Hourly.windgusts10m).toDomain(zoneId),
             windDirection = forecast.hourly.getValue(Forecast.Hourly.winddirection10m).toDomain(zoneId),

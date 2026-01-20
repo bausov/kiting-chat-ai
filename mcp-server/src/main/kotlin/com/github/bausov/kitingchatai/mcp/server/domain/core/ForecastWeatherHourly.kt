@@ -4,6 +4,8 @@ import java.time.LocalDateTime
 
 data class ForecastWeatherHourly(
     override val currentDateTime: LocalDateTime,
+    val sunrise: UnitTimeStepValues,
+    val sunset: UnitTimeStepValues,
     val windSpeed: UnitTimeStepValues,
     val windGusts: UnitTimeStepValues,
     val windDirection: UnitTimeStepValues,
