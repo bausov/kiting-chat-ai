@@ -28,6 +28,7 @@ class OpenMeteoForecastApiClient : OpenMeteoApiClient() {
         )
 
         val forecast = om.forecast {
+            models = Forecast.Models.gfsGlobal
             daily = Forecast.Daily {
                 listOf(
                     sunrise,
