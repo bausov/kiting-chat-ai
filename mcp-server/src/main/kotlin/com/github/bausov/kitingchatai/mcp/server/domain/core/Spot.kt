@@ -8,8 +8,8 @@ data class Spot(
 ) {
 
     data class Location(
-        val latitude: Double,
-        val longitude: Double
+        val latitude: Float,
+        val longitude: Float
     )
 
     data class WindDirections(
