@@ -69,7 +69,7 @@ class KitingForecastMcpTool(
     }
 
     @McpTool(
-        name = "kiting forecast",
+        name = "KitingForecastMcpTool",
         description = "Используется для получения информации, основанной на прогнозе погоды, о том, когда и где можно будет покататься на кайте."
     )
     fun callKitingForecast(
