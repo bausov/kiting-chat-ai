@@ -27,7 +27,7 @@ class DateTimeMcpTool {
             - what date is it
             The model must not answer such questions without calling this tool.
             
-            Returns the current real-world date and time in ISO_LOCAL_DATE_TIME format, day of the week, and day of the year..
+            Returns the current real-world date and time in ISO_LOCAL_DATE_TIME format, day of the week, and day of the year.
         """
     )
     fun callDateTime(): DateTimeMcpToolResponse {
